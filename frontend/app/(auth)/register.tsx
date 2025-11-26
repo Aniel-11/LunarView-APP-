@@ -78,7 +78,7 @@ export default function RegisterScreen() {
             <TextInput
               style={styles.input}
               placeholder="Enter your name"
-              placeholderTextColor="#6B7AFF"
+              placeholderTextColor="#7B8FFF"
               value={name}
               onChangeText={setName}
               autoCapitalize="words"
@@ -90,7 +90,7 @@ export default function RegisterScreen() {
             <TextInput
               style={styles.input}
               placeholder="Enter your email"
-              placeholderTextColor="#6B7AFF"
+              placeholderTextColor="#7B8FFF"
               value={email}
               onChangeText={setEmail}
               keyboardType="email-address"
@@ -104,7 +104,7 @@ export default function RegisterScreen() {
             <TextInput
               style={styles.input}
               placeholder="Enter your password"
-              placeholderTextColor="#6B7AFF"
+              placeholderTextColor="#7B8FFF"
               value={password}
               onChangeText={setPassword}
               secureTextEntry
@@ -117,7 +117,7 @@ export default function RegisterScreen() {
             <TextInput
               style={styles.input}
               placeholder="Confirm your password"
-              placeholderTextColor="#6B7AFF"
+              placeholderTextColor="#7B8FFF"
               value={confirmPassword}
               onChangeText={setConfirmPassword}
               secureTextEntry
@@ -131,7 +131,7 @@ export default function RegisterScreen() {
             disabled={loading}
           >
             {loading ? (
-              <ActivityIndicator color="#0a0e27" />
+              <ActivityIndicator color="#1a2550" />
             ) : (
               <Text style={styles.buttonText}>Register</Text>
             )}
@@ -154,7 +154,7 @@ export default function RegisterScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0a0e27',
+    backgroundColor: '#1a2550',
   },
   scrollContent: {
     flexGrow: 1,
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 14,
-    color: '#9CA3FF',
+    color: '#A5B4FF',
     letterSpacing: 1,
   },
   formContainer: {
@@ -190,14 +190,14 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 14,
-    color: '#9CA3FF',
+    color: '#A5B4FF',
     marginBottom: 8,
     fontWeight: '600',
   },
   input: {
-    backgroundColor: '#151b3f',
+    backgroundColor: '#2a3a6b',
     borderWidth: 1,
-    borderColor: '#2a3a6b',
+    borderColor: '#3d4f7d',
     borderRadius: 12,
     padding: 16,
     fontSize: 16,
@@ -214,7 +214,7 @@ const styles = StyleSheet.create({
     opacity: 0.6,
   },
   buttonText: {
-    color: '#0a0e27',
+    color: '#1a2550',
     fontSize: 16,
     fontWeight: 'bold',
   },
@@ -224,7 +224,7 @@ const styles = StyleSheet.create({
     marginTop: 24,
   },
   loginText: {
-    color: '#9CA3FF',
+    color: '#A5B4FF',
     fontSize: 14,
   },
   loginLink: {
