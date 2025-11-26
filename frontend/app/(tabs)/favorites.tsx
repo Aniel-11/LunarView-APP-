@@ -11,7 +11,7 @@ import {
 import { StatusBar } from 'expo-status-bar';
 import axios from 'axios';
 import { Ionicons } from '@expo/vector-icons';
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../../src/contexts/AuthContext';
 
 const API_URL = process.env.EXPO_PUBLIC_BACKEND_URL;
 
