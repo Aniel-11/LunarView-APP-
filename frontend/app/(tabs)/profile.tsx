@@ -59,7 +59,7 @@ export default function ProfileScreen() {
                 <Ionicons name="notifications" size={24} color="#6B7AFF" />
                 <Text style={styles.settingText}>Notifications</Text>
               </View>
-              <Ionicons name="chevron-forward" size={20} color="#9CA3FF" />
+              <Ionicons name="chevron-forward" size={20} color="#A5B4FF" />
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.settingItem}>
@@ -67,7 +67,7 @@ export default function ProfileScreen() {
                 <Ionicons name="moon" size={24} color="#6B7AFF" />
                 <Text style={styles.settingText}>Theme</Text>
               </View>
-              <Ionicons name="chevron-forward" size={20} color="#9CA3FF" />
+              <Ionicons name="chevron-forward" size={20} color="#A5B4FF" />
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.settingItem}>
@@ -75,7 +75,7 @@ export default function ProfileScreen() {
                 <Ionicons name="information-circle" size={24} color="#6B7AFF" />
                 <Text style={styles.settingText}>About</Text>
               </View>
-              <Ionicons name="chevron-forward" size={20} color="#9CA3FF" />
+              <Ionicons name="chevron-forward" size={20} color="#A5B4FF" />
             </TouchableOpacity>
           </View>
 
@@ -96,14 +96,14 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0a0e27',
+    backgroundColor: '#1a2550',
   },
   header: {
     padding: 24,
     paddingTop: 60,
-    backgroundColor: '#151b3f',
+    backgroundColor: '#2a3a6b',
     borderBottomWidth: 1,
-    borderBottomColor: '#2a3a6b',
+    borderBottomColor: '#3d4f7d',
   },
   headerTitle: {
     fontSize: 24,
@@ -118,13 +118,13 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   card: {
-    backgroundColor: '#151b3f',
+    backgroundColor: '#2a3a6b',
     borderRadius: 16,
     padding: 24,
     alignItems: 'center',
     marginBottom: 24,
     borderWidth: 1,
-    borderColor: '#2a3a6b',
+    borderColor: '#3d4f7d',
   },
   avatarContainer: {
     marginBottom: 16,
@@ -136,21 +136,21 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   userEmail: {
-    color: '#9CA3FF',
+    color: '#A5B4FF',
     fontSize: 16,
   },
   section: {
     marginBottom: 24,
   },
   sectionTitle: {
-    color: '#9CA3FF',
+    color: '#A5B4FF',
     fontSize: 14,
     fontWeight: '600',
     marginBottom: 12,
     marginLeft: 4,
   },
   settingItem: {
-    backgroundColor: '#151b3f',
+    backgroundColor: '#2a3a6b',
     borderRadius: 12,
     padding: 16,
     flexDirection: 'row',
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 8,
     borderWidth: 1,
-    borderColor: '#2a3a6b',
+    borderColor: '#3d4f7d',
   },
   settingLeft: {
     flexDirection: 'row',

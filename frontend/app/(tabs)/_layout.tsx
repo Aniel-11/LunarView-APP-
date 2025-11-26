@@ -8,12 +8,12 @@ export default function TabLayout() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: '#151b3f',
-          borderTopColor: '#2a3a6b',
+          backgroundColor: '#2a3a6b',
+          borderTopColor: '#3d4f7d',
           borderTopWidth: 1,
         },
         tabBarActiveTintColor: '#6B7AFF',
-        tabBarInactiveTintColor: '#9CA3FF',
+        tabBarInactiveTintColor: '#A5B4FF',
       }}
     >
       <Tabs.Screen

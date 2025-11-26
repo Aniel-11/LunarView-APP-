@@ -107,11 +107,6 @@ export default function HomeScreen() {
     setRefreshing(false);
   };
 
-  const getMoonPhaseEmoji = (moonStatus: string) => {
-    // Return moon icon name based on phase
-    return 'moon';
-  };
-
   if (loading && !astronomyData) {
     return (
       <View style={styles.loadingContainer}>
@@ -136,7 +131,7 @@ export default function HomeScreen() {
         <View>
           <Text style={styles.headerTitle}>LUNAR VIEW</Text>
           <View style={styles.locationContainer}>
-            <Ionicons name="location" size={16} color="#9CA3FF" />
+            <Ionicons name="location" size={16} color="#A5B4FF" />
             <Text style={styles.locationText}>{locationName}</Text>
           </View>
         </View>
@@ -203,7 +198,7 @@ export default function HomeScreen() {
             {/* Moon Card */}
             <View style={styles.card}>
               <View style={styles.cardHeader}>
-                <Ionicons name="moon" size={32} color="#C0C0FF" />
+                <Ionicons name="moon" size={32} color="#D8E0FF" />
                 <Text style={styles.cardTitle}>Moon</Text>
               </View>
               <View style={styles.cardDivider} />
@@ -242,11 +237,11 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0a0e27',
+    backgroundColor: '#1a2550',
   },
   loadingContainer: {
     flex: 1,
-    backgroundColor: '#0a0e27',
+    backgroundColor: '#1a2550',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 24,
@@ -260,7 +255,7 @@ const styles = StyleSheet.create({
     marginVertical: 16,
   },
   loadingText: {
-    color: '#9CA3FF',
+    color: '#A5B4FF',
     fontSize: 16,
     marginTop: 16,
   },
@@ -270,9 +265,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 24,
     paddingTop: 60,
-    backgroundColor: '#151b3f',
+    backgroundColor: '#2a3a6b',
     borderBottomWidth: 1,
-    borderBottomColor: '#2a3a6b',
+    borderBottomColor: '#3d4f7d',
   },
   headerTitle: {
     fontSize: 24,
@@ -286,7 +281,7 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   locationText: {
-    color: '#9CA3FF',
+    color: '#A5B4FF',
     fontSize: 14,
     marginLeft: 4,
   },
@@ -300,13 +295,13 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   dateCard: {
-    backgroundColor: '#151b3f',
+    backgroundColor: '#2a3a6b',
     borderRadius: 16,
     padding: 20,
     marginBottom: 16,
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#2a3a6b',
+    borderColor: '#3d4f7d',
   },
   dateText: {
     color: '#6B7AFF',
@@ -314,17 +309,17 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   timeText: {
-    color: '#9CA3FF',
+    color: '#A5B4FF',
     fontSize: 16,
     marginTop: 4,
   },
   card: {
-    backgroundColor: '#151b3f',
+    backgroundColor: '#2a3a6b',
     borderRadius: 16,
     padding: 20,
     marginBottom: 16,
     borderWidth: 1,
-    borderColor: '#2a3a6b',
+    borderColor: '#3d4f7d',
   },
   cardHeader: {
     flexDirection: 'row',
@@ -339,7 +334,7 @@ const styles = StyleSheet.create({
   },
   cardDivider: {
     height: 1,
-    backgroundColor: '#2a3a6b',
+    backgroundColor: '#3d4f7d',
     marginBottom: 16,
   },
   dataRow: {
@@ -348,7 +343,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   dataLabel: {
-    color: '#9CA3FF',
+    color: '#A5B4FF',
     fontSize: 16,
   },
   dataValue: {
