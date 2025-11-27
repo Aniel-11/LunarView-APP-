@@ -111,7 +111,7 @@ export default function FavoritesScreen() {
 
       {favorites.length === 0 ? (
         <View style={styles.emptyContainer}>
-          <Ionicons name="star-outline" size={64} color="#3d4f7d" />
+          <Ionicons name="star-outline" size={64} color="#2a3a6b" />
           <Text style={styles.emptyText}>No favorite locations yet</Text>
           <Text style={styles.emptySubtext}>
             Save locations from the home screen to view them here
@@ -132,20 +132,20 @@ export default function FavoritesScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1a2550',
+    backgroundColor: '#0f1729',
   },
   loadingContainer: {
     flex: 1,
-    backgroundColor: '#1a2550',
+    backgroundColor: '#0f1729',
     justifyContent: 'center',
     alignItems: 'center',
   },
   header: {
     padding: 24,
     paddingTop: 60,
-    backgroundColor: '#2a3a6b',
+    backgroundColor: '#1a2540',
     borderBottomWidth: 1,
-    borderBottomColor: '#3d4f7d',
+    borderBottomColor: '#2a3a6b',
   },
   headerTitle: {
     fontSize: 24,
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   favoriteCard: {
-    backgroundColor: '#2a3a6b',
+    backgroundColor: '#1a2540',
     borderRadius: 12,
     padding: 16,
     marginBottom: 12,
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     borderWidth: 1,
-    borderColor: '#3d4f7d',
+    borderColor: '#2a3a6b',
   },
   favoriteContent: {
     flexDirection: 'row',

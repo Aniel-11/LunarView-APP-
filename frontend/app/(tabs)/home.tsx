@@ -112,7 +112,7 @@ export default function HomeScreen() {
       <View style={styles.loadingContainer}>
         <StatusBar style="light" />
         <Image
-          source={{ uri: 'https://customer-assets.emergentagent.com/job_solarlunarapp/artifacts/9co39lbx_image0.jpeg' }}
+          source={{ uri: 'https://customer-assets.emergentagent.com/job_solarlunarapp/artifacts/vbw1n1j3_IMG_0232.jpg' }}
           style={styles.loadingLogo}
           resizeMode="contain"
         />
@@ -128,8 +128,12 @@ export default function HomeScreen() {
       
       {/* Header */}
       <View style={styles.header}>
-        <View>
-          <Text style={styles.headerTitle}>LUNAR VIEW</Text>
+        <View style={styles.headerContent}>
+          <Image
+            source={{ uri: 'https://customer-assets.emergentagent.com/job_solarlunarapp/artifacts/vbw1n1j3_IMG_0232.jpg' }}
+            style={styles.headerLogo}
+            resizeMode="contain"
+          />
           <View style={styles.locationContainer}>
             <Ionicons name="location" size={16} color="#A5B4FF" />
             <Text style={styles.locationText}>{locationName}</Text>
@@ -237,18 +241,18 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1a2550',
+    backgroundColor: '#0f1729',
   },
   loadingContainer: {
     flex: 1,
-    backgroundColor: '#1a2550',
+    backgroundColor: '#0f1729',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 24,
   },
   loadingLogo: {
-    width: 120,
-    height: 120,
+    width: 150,
+    height: 150,
     marginBottom: 24,
   },
   loader: {
@@ -265,20 +269,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 24,
     paddingTop: 60,
-    backgroundColor: '#2a3a6b',
+    backgroundColor: '#1a2540',
     borderBottomWidth: 1,
-    borderBottomColor: '#3d4f7d',
+    borderBottomColor: '#2a3a6b',
   },
-  headerTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#6B7AFF',
-    letterSpacing: 1,
+  headerContent: {
+    flex: 1,
+  },
+  headerLogo: {
+    width: 120,
+    height: 60,
+    marginBottom: 8,
   },
   locationContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 8,
+    marginTop: 4,
   },
   locationText: {
     color: '#A5B4FF',
@@ -295,13 +301,13 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   dateCard: {
-    backgroundColor: '#2a3a6b',
+    backgroundColor: '#1a2540',
     borderRadius: 16,
     padding: 20,
     marginBottom: 16,
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#3d4f7d',
+    borderColor: '#2a3a6b',
   },
   dateText: {
     color: '#6B7AFF',
@@ -314,12 +320,12 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   card: {
-    backgroundColor: '#2a3a6b',
+    backgroundColor: '#1a2540',
     borderRadius: 16,
     padding: 20,
     marginBottom: 16,
     borderWidth: 1,
-    borderColor: '#3d4f7d',
+    borderColor: '#2a3a6b',
   },
   cardHeader: {
     flexDirection: 'row',
@@ -334,7 +340,7 @@ const styles = StyleSheet.create({
   },
   cardDivider: {
     height: 1,
-    backgroundColor: '#3d4f7d',
+    backgroundColor: '#2a3a6b',
     marginBottom: 16,
   },
   dataRow: {

@@ -96,14 +96,14 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1a2550',
+    backgroundColor: '#0f1729',
   },
   header: {
     padding: 24,
     paddingTop: 60,
-    backgroundColor: '#2a3a6b',
+    backgroundColor: '#1a2540',
     borderBottomWidth: 1,
-    borderBottomColor: '#3d4f7d',
+    borderBottomColor: '#2a3a6b',
   },
   headerTitle: {
     fontSize: 24,
@@ -118,13 +118,13 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   card: {
-    backgroundColor: '#2a3a6b',
+    backgroundColor: '#1a2540',
     borderRadius: 16,
     padding: 24,
     alignItems: 'center',
     marginBottom: 24,
     borderWidth: 1,
-    borderColor: '#3d4f7d',
+    borderColor: '#2a3a6b',
   },
   avatarContainer: {
     marginBottom: 16,
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     marginLeft: 4,
   },
   settingItem: {
-    backgroundColor: '#2a3a6b',
+    backgroundColor: '#1a2540',
     borderRadius: 12,
     padding: 16,
     flexDirection: 'row',
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 8,
     borderWidth: 1,
-    borderColor: '#3d4f7d',
+    borderColor: '#2a3a6b',
   },
   settingLeft: {
     flexDirection: 'row',

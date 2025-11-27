@@ -52,12 +52,10 @@ export default function LoginScreen() {
       >
         <View style={styles.logoContainer}>
           <Image
-            source={{ uri: 'https://customer-assets.emergentagent.com/job_solarlunarapp/artifacts/9co39lbx_image0.jpeg' }}
+            source={{ uri: 'https://customer-assets.emergentagent.com/job_solarlunarapp/artifacts/vbw1n1j3_IMG_0232.jpg' }}
             style={styles.logo}
             resizeMode="contain"
           />
-          <Text style={styles.title}>LUNAR VIEW</Text>
-          <Text style={styles.subtitle}>Real-Time Astronomical Tracking</Text>
         </View>
 
         <View style={styles.formContainer}>
@@ -94,7 +92,7 @@ export default function LoginScreen() {
             disabled={loading}
           >
             {loading ? (
-              <ActivityIndicator color="#1a2550" />
+              <ActivityIndicator color="#0f1729" />
             ) : (
               <Text style={styles.buttonText}>Login</Text>
             )}
@@ -117,7 +115,7 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1a2550',
+    backgroundColor: '#0f1729',
   },
   scrollContent: {
     flexGrow: 1,
@@ -129,21 +127,9 @@ const styles = StyleSheet.create({
     marginBottom: 48,
   },
   logo: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 250,
     marginBottom: 16,
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: '#6B7AFF',
-    marginBottom: 8,
-    letterSpacing: 2,
-  },
-  subtitle: {
-    fontSize: 14,
-    color: '#A5B4FF',
-    letterSpacing: 1,
   },
   formContainer: {
     width: '100%',
@@ -158,9 +144,9 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   input: {
-    backgroundColor: '#2a3a6b',
+    backgroundColor: '#1a2540',
     borderWidth: 1,
-    borderColor: '#3d4f7d',
+    borderColor: '#2a3a6b',
     borderRadius: 12,
     padding: 16,
     fontSize: 16,
@@ -177,7 +163,7 @@ const styles = StyleSheet.create({
     opacity: 0.6,
   },
   buttonText: {
-    color: '#1a2550',
+    color: '#0f1729',
     fontSize: 16,
     fontWeight: 'bold',
   },
