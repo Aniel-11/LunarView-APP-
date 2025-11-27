@@ -1,0 +1,120 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.profileCard {
+  background-color: #1a2540;
+  border: 1px solid #2a3a6b;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.avatarContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #6B7AFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.profileCard h2 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.email {
+  color: #A5B4FF;
+  font-size: 1.1rem;
+}
+
+.settingsSection h3 {
+  color: #A5B4FF;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.settingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.settingItem {
+  background-color: #1a2540;
+  border: 1px solid #2a3a6b;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.settingItem:hover {
+  background-color: #2a3a6b;
+  transform: translateX(5px);
+}
+
+.logoutButton {
+  background-color: #FF6B6B;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 1.25rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.logoutButton:hover {
+  background-color: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+.version {
+  text-align: center;
+  color: #6B7AFF;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .profileCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+  }
+
+  .profileCard h2 {
+    font-size: 1.5rem;
+  }
+}
