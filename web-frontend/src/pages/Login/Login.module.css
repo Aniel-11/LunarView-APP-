@@ -1,0 +1,138 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0f1729;
+  padding: 2rem;
+}
+
+.loginBox {
+  background-color: #1a2540;
+  border: 1px solid #2a3a6b;
+  border-radius: 16px;
+  padding: 3rem;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inputGroup label {
+  color: #A5B4FF;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.inputGroup input {
+  background-color: #0f1729;
+  border: 1px solid #2a3a6b;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: #6B7AFF;
+  box-shadow: 0 0 0 3px rgba(107, 122, 255, 0.1);
+}
+
+.inputGroup input::placeholder {
+  color: #7B8FFF;
+}
+
+.inputGroup input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button {
+  background-color: #6B7AFF;
+  color: #0f1729;
+  border: none;
+  border-radius: 8px;
+  padding: 0.875rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #5a69ee;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(107, 122, 255, 0.3);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  background-color: rgba(255, 107, 107, 0.1);
+  border: 1px solid #FF6B6B;
+  color: #FF6B6B;
+  padding: 0.75rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.registerLink {
+  text-align: center;
+  color: #A5B4FF;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.registerLink a {
+  color: #6B7AFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.registerLink a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .loginBox {
+    padding: 2rem 1.5rem;
+  }
+
+  .logo {
+    width: 150px;
+  }
+}
