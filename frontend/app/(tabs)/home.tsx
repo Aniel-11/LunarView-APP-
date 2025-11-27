@@ -112,7 +112,7 @@ export default function HomeScreen() {
       <View style={styles.loadingContainer}>
         <StatusBar style="light" />
         <Image
-          source={{ uri: 'https://customer-assets.emergentagent.com/job_solarlunarapp/artifacts/vbw1n1j3_IMG_0232.jpg' }}
+          source={{ uri: 'https://customer-assets.emergentagent.com/job_solarlunarapp/artifacts/99c984g7_IMG_0233.jpg' }}
           style={styles.loadingLogo}
           resizeMode="contain"
         />
@@ -130,7 +130,7 @@ export default function HomeScreen() {
       <View style={styles.header}>
         <View style={styles.headerContent}>
           <Image
-            source={{ uri: 'https://customer-assets.emergentagent.com/job_solarlunarapp/artifacts/vbw1n1j3_IMG_0232.jpg' }}
+            source={{ uri: 'https://customer-assets.emergentagent.com/job_solarlunarapp/artifacts/99c984g7_IMG_0233.jpg' }}
             style={styles.headerLogo}
             resizeMode="contain"
           />
@@ -251,8 +251,8 @@ const styles = StyleSheet.create({
     padding: 24,
   },
   loadingLogo: {
-    width: 150,
-    height: 150,
+    width: 180,
+    height: 180,
     marginBottom: 24,
   },
   loader: {
@@ -277,8 +277,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   headerLogo: {
-    width: 120,
-    height: 60,
+    width: 140,
+    height: 70,
     marginBottom: 8,
   },
   locationContainer: {

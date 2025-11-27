@@ -52,7 +52,7 @@ export default function LoginScreen() {
       >
         <View style={styles.logoContainer}>
           <Image
-            source={{ uri: 'https://customer-assets.emergentagent.com/job_solarlunarapp/artifacts/vbw1n1j3_IMG_0232.jpg' }}
+            source={{ uri: 'https://customer-assets.emergentagent.com/job_solarlunarapp/artifacts/99c984g7_IMG_0233.jpg' }}
             style={styles.logo}
             resizeMode="contain"
           />
@@ -127,8 +127,8 @@ const styles = StyleSheet.create({
     marginBottom: 48,
   },
   logo: {
-    width: 250,
-    height: 250,
+    width: 280,
+    height: 280,
     marginBottom: 16,
   },
   formContainer: {

@@ -64,7 +64,7 @@ export default function RegisterScreen() {
       >
         <View style={styles.logoContainer}>
           <Image
-            source={{ uri: 'https://customer-assets.emergentagent.com/job_solarlunarapp/artifacts/vbw1n1j3_IMG_0232.jpg' }}
+            source={{ uri: 'https://customer-assets.emergentagent.com/job_solarlunarapp/artifacts/99c984g7_IMG_0233.jpg' }}
             style={styles.logo}
             resizeMode="contain"
           />
@@ -164,8 +164,8 @@ const styles = StyleSheet.create({
     marginBottom: 32,
   },
   logo: {
-    width: 200,
-    height: 200,
+    width: 220,
+    height: 220,
     marginBottom: 16,
   },
   formContainer: {
