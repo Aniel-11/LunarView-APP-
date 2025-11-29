@@ -1,3 +1,13 @@
+:root {
+  --background: #0f1729;
+  --cardBg: #1a2540;
+  --border: #2a3a6b;
+  --primary: #6B7AFF;
+  --text: #ffffff;
+  --textSecondary: #A5B4FF;
+  --textTertiary: #7B8FFF;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,8 +20,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #0f1729;
-  color: #ffffff;
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 code {
