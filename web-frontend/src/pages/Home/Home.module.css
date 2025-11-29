@@ -23,29 +23,65 @@
 }
 
 .locationInfo h2 {
-  color: #6B7AFF;
+  color: var(--primary);
   font-size: 1.5rem;
 }
 
-.refreshButton {
-  background-color: #6B7AFF;
-  color: white;
+.headerButtons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.selectButton, .saveButton, .refreshButton, .manualButton, .retryButton {
+  padding: 0.75rem 1.25rem;
   border: none;
-  padding: 0.75rem 1.5rem;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
+  font-size: 0.95rem;
 }
 
-.refreshButton:hover {
-  background-color: #5a69ee;
+.selectButton {
+  background-color: var(--primary);
+  color: var(--background);
+}
+
+.saveButton {
+  background-color: #10b981;
+  color: white;
+}
+
+.refreshButton {
+  background-color: var(--primary);
+  color: var(--background);
+}
+
+.manualButton {
+  background-color: var(--primary);
+  color: var(--background);
+}
+
+.retryButton {
+  background-color: var(--primary);
+  color: var(--background);
+}
+
+.selectButton:hover, .saveButton:hover, .refreshButton:hover, .manualButton:hover, .retryButton:hover {
   transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.saveButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .dateCard {
-  background-color: #1a2540;
-  border: 1px solid #2a3a6b;
+  background-color: var(--cardBg);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 2rem;
   text-align: center;
@@ -53,13 +89,13 @@
 }
 
 .dateCard h3 {
-  color: #6B7AFF;
+  color: var(--primary);
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
 .dateCard p {
-  color: #A5B4FF;
+  color: var(--textSecondary);
   font-size: 1.2rem;
 }
 
@@ -70,8 +106,8 @@
 }
 
 .card {
-  background-color: #1a2540;
-  border: 1px solid #2a3a6b;
+  background-color: var(--cardBg);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 2rem;
   transition: transform 0.3s ease;
@@ -94,13 +130,13 @@
 }
 
 .cardHeader h3 {
-  color: white;
+  color: var(--text);
   font-size: 1.5rem;
 }
 
 .cardDivider {
   height: 1px;
-  background-color: #2a3a6b;
+  background-color: var(--border);
   margin-bottom: 1.5rem;
 }
 
@@ -117,12 +153,12 @@
 }
 
 .dataRow span:first-child {
-  color: #A5B4FF;
+  color: var(--textSecondary);
   font-size: 1rem;
 }
 
 .dataRow span:last-child {
-  color: white;
+  color: var(--text);
   font-weight: 600;
   font-size: 1rem;
 }
@@ -142,8 +178,8 @@
 }
 
 .loader {
-  border: 4px solid #1a2540;
-  border-top: 4px solid #6B7AFF;
+  border: 4px solid var(--border);
+  border-top: 4px solid var(--primary);
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -156,7 +192,7 @@
 }
 
 .loadingContainer p {
-  color: #A5B4FF;
+  color: var(--textSecondary);
   font-size: 1.1rem;
 }
 
@@ -173,23 +209,13 @@
   color: #FF6B6B;
   font-size: 1.2rem;
   text-align: center;
+  max-width: 500px;
 }
 
-.retryButton {
-  background-color: #6B7AFF;
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.retryButton:hover {
-  background-color: #5a69ee;
-  transform: translateY(-2px);
+.errorButtons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 /* Mobile responsive */
@@ -203,11 +229,29 @@
     align-items: flex-start;
   }
 
+  .headerButtons {
+    width: 100%;
+  }
+
+  .selectButton, .saveButton, .refreshButton {
+    flex: 1;
+    min-width: 120px;
+  }
+
   .locationInfo h2 {
     font-size: 1.2rem;
   }
 
   .card {
     padding: 1.5rem;
+  }
+
+  .errorButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .manualButton, .retryButton {
+    width: 100%;
   }
 }
