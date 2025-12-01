@@ -204,15 +204,18 @@ test_plan:
 
   - task: "Password Reset API"
     implemented: true
-    working: "NA"
+    working: true
     file: "backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "New password reset endpoint added at /api/auth/reset-password. Accepts email and new_password. Need to test functionality."
+      - working: true
+        agent: "testing"
+        comment: "✅ Password reset functionality working perfectly. Successfully tested: 1) Password reset with valid email returns 'Password reset successfully' message, 2) Old password correctly rejected after reset, 3) New password works for login, 4) Invalid email returns 404 error as expected, 5) Favorite locations functionality still works after password reset. All edge cases handled properly."
 
 agent_communication:
   - agent: "testing"
