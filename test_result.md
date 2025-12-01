@@ -202,6 +202,20 @@ test_plan:
   test_all: true
   test_priority: "high_first"
 
+  - task: "Password Reset API"
+    implemented: true
+    working: "NA"
+    file: "backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "New password reset endpoint added at /api/auth/reset-password. Accepts email and new_password. Need to test functionality."
+
 agent_communication:
   - agent: "testing"
     message: "✅ ALL BACKEND TESTS PASSED (7/7) - Complete backend API testing completed successfully. All endpoints working correctly: User Registration, Login, Get Current User, Astronomy Data, Add/Get/Delete Favorites. Fixed missing httpx dependency issue during testing. Backend is fully functional and ready for production use."
+  - agent: "main"
+    message: "📝 Updates made: 1) Fixed HTML document location - moved to /app/Functioneel_Ontwerp_Lunar_View.html. 2) Added password reset feature - new backend endpoint /api/auth/reset-password and frontend page /reset-password with link from login page. 3) Enhanced favorite location save with better error handling and Dutch messages. Need to test password reset endpoint and investigate user reported issue with save favorite location button not working."
