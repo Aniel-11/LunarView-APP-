@@ -11,7 +11,7 @@ import sys
 from datetime import datetime
 
 # Configuration
-BASE_URL = "https://solarlunarapp.preview.emergentagent.com/api"
+BASE_URL = "https://lunar-view.preview.emergentagent.com/api"
 TEST_USER = {
     "email": "test@lunarview.com",
     "password": "test123",
