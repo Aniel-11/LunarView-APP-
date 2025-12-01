@@ -193,6 +193,22 @@ async def get_me(current_user: dict = Depends(get_current_user)):
         created_at=current_user["created_at"]
     )
 
+@api_router.post("/auth/reset-password")
+async def reset_password(reset_data: PasswordResetRequest):
+    # Find user by email
+    user = await db.users.find_one({"email": reset_data.email})
+    if not user:
+        raise HTTPException(status_code=404, detail="User with this email not found")
+    
+    # Update password
+    hashed_password = hash_password(reset_data.new_password)
+    await db.users.update_one(
+        {"_id": user["_id"]},
+        {"$set": {"password": hashed_password}}
+    )
+    
+    return {"message": "Password reset successfully"}
+
 # Astronomy Routes
 @api_router.get("/astronomy")
 async def get_astronomy_data(
