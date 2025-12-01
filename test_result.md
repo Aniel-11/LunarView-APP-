@@ -197,7 +197,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "All backend APIs tested successfully"
+    - "Password Reset API testing completed successfully"
   stuck_tasks: []
   test_all: true
   test_priority: "high_first"
