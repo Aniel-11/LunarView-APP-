@@ -293,6 +293,18 @@ async def delete_favorite(
     
     return {"message": "Favorite deleted successfully"}
 
+# Document download endpoint
+from fastapi.responses import FileResponse
+
+@app.get("/download/document")
+async def download_document():
+    file_path = "/app/Functioneel_Ontwerp_Lunar_View.html"
+    return FileResponse(
+        path=file_path,
+        filename="Functioneel_Ontwerp_Lunar_View.html",
+        media_type="text/html"
+    )
+
 # Include the router in the main app
 app.include_router(api_router)
 
