@@ -73,6 +73,10 @@ function Login() {
             {loading ? 'Loading...' : 'Login'}
           </button>
 
+          <p className={styles.forgotPassword}>
+            <Link to="/reset-password">Wachtwoord vergeten?</Link>
+          </p>
+
           <p className={styles.registerLink}>
             Don't have an account? <Link to="/register">Register</Link>
           </p>
