@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 Lunar View Backend API Testing Script
-Tests all backend endpoints in the complete flow:
-register → login → fetch astronomy → add favorite → get favorites → delete favorite
+Tests all backend endpoints including the new password reset functionality:
+register → login → password reset → verify old/new passwords → favorites
 """
 
 import requests
@@ -17,6 +17,9 @@ TEST_USER = {
     "password": "test123",
     "name": "Test User"
 }
+
+# Password reset test data
+NEW_PASSWORD = "newpassword123"
 
 # Test coordinates (Berlin)
 TEST_COORDINATES = {
