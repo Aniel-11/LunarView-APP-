@@ -1,116 +1,162 @@
+diff --git a/model.patch b/model.patch
+index a28d494..e69de29 100644
+--- a/model.patch
++++ b/model.patch
+@@ -1,116 +0,0 @@
+-diff --git a/test_result.md b/test_result.md
+-index 187cba4..67f982e 100644
+---- a/test_result.md
+-+++ b/test_result.md
+-@@ -100,4 +100,108 @@
+- 
+- #====================================================================================================
+- # Testing Data - Main Agent and testing sub agent both should log testing data below this section
+--#====================================================================================================
+-\ No newline at end of file
+-+#====================================================================================================
+-+
+-+user_problem_statement: "Test the Lunar View backend APIs for user authentication, astronomy data retrieval, and favorite location management"
+-+
+-+backend:
+-+  - task: "User Registration API"
+-+    implemented: true
+-+    working: true
+-+    file: "backend/server.py"
+-+    stuck_count: 0
+-+    priority: "high"
+-+    needs_retesting: false
+-+    status_history:
+-+      - working: true
+-+        agent: "testing"
+-+        comment: "✅ User registration endpoint working correctly. Successfully registered test user with email test@lunarview.com and received access token and user object with ID 69265aaa8791e652efc58002"
+-+
+-+  - task: "User Login API"
+-+    implemented: true
+-+    working: true
+-+    file: "backend/server.py"
+-+    stuck_count: 0
+-+    priority: "high"
+-+    needs_retesting: false
+-+    status_history:
+-+      - working: true
+-+        agent: "testing"
+-+        comment: "✅ User login endpoint working correctly. Successfully authenticated with test credentials and received access token and user object"
+-+
+-+  - task: "Get Current User API"
+-+    implemented: true
+-+    working: true
+-+    file: "backend/server.py"
+-+    stuck_count: 0
+-+    priority: "high"
+-+    needs_retesting: false
+-+    status_history:
+-+      - working: true
+-+        agent: "testing"
+-+        comment: "✅ Get current user endpoint working correctly. Successfully retrieved user data using Bearer token authentication"
+-+
+-+  - task: "Astronomy Data API"
+-+    implemented: true
+-+    working: true
+-+    file: "backend/server.py"
+-+    stuck_count: 0
+-+    priority: "high"
+-+    needs_retesting: false
+-+    status_history:
+-+      - working: true
+-+        agent: "testing"
+-+        comment: "✅ Astronomy data endpoint working correctly. Successfully retrieved comprehensive astronomical data for Berlin coordinates (lat: 52.52, long: 13.405) from ipgeolocation.io API including sunrise, sunset, moonrise, moonset, moon phase, and other astronomical calculations"
+-+
+-+  - task: "Add Favorite Location API"
+-+    implemented: true
+-+    working: true
+-+    file: "backend/server.py"
+-+    stuck_count: 0
+-+    priority: "high"
+-+    needs_retesting: false
+-+    status_history:
+-+      - working: true
+-+        agent: "testing"
+-+        comment: "✅ Add favorite location endpoint working correctly. Successfully added Berlin as favorite location with coordinates and received favorite object with ID 69265aac8791e652efc58003"
+-+
+-+  - task: "Get Favorites API"
+-+    implemented: true
+-+    working: true
+-+    file: "backend/server.py"
+-+    stuck_count: 0
+-+    priority: "high"
+-+    needs_retesting: false
+-+    status_history:
+-+      - working: true
+-+        agent: "testing"
+-+        comment: "✅ Get favorites endpoint working correctly. Successfully retrieved list of user's favorite locations (1 location found)"
+-+
+-+  - task: "Delete Favorite API"
+-+    implemented: true
+-+    working: true
+-+    file: "backend/server.py"
+-+    stuck_count: 0
+-+    priority: "high"
+-+    needs_retesting: false
+-+    status_history:
+-+      - working: true
+-+        agent: "testing"
+-+        comment: "✅ Delete favorite endpoint working correctly. Successfully deleted favorite location and received success confirmation message"
+-+
+-+metadata:
+-+  created_by: "testing_agent"
+-+  version: "1.0"
+-+  test_sequence: 1
+-+  run_ui: false
+-+
+-+test_plan:
+-+  current_focus:
+-+    - "All backend APIs tested successfully"
+-+  stuck_tasks: []
+-+  test_all: true
+-+  test_priority: "high_first"
+-+
+-+agent_communication:
+-+  - agent: "testing"
+-+    message: "✅ ALL BACKEND TESTS PASSED (7/7) - Complete backend API testing completed successfully. All endpoints working correctly: User Registration, Login, Get Current User, Astronomy Data, Add/Get/Delete Favorites. Fixed missing httpx dependency issue during testing. Backend is fully functional and ready for production use."
+-\ No newline at end of file
 diff --git a/test_result.md b/test_result.md
-index 187cba4..67f982e 100644
+index 3726cdb..406c4d2 100644
 --- a/test_result.md
 +++ b/test_result.md
-@@ -100,4 +100,108 @@
+@@ -197,25 +197,30 @@ metadata:
  
- #====================================================================================================
- # Testing Data - Main Agent and testing sub agent both should log testing data below this section
--#====================================================================================================
+ test_plan:
+   current_focus:
+-    - "All backend APIs tested successfully"
++    - "Password Reset API testing completed successfully"
+   stuck_tasks: []
+   test_all: true
+   test_priority: "high_first"
+ 
+   - task: "Password Reset API"
+     implemented: true
+-    working: "NA"
++    working: true
+     file: "backend/server.py"
+     stuck_count: 0
+     priority: "high"
+-    needs_retesting: true
++    needs_retesting: false
+     status_history:
+       - working: "NA"
+         agent: "main"
+         comment: "New password reset endpoint added at /api/auth/reset-password. Accepts email and new_password. Need to test functionality."
++      - working: true
++        agent: "testing"
++        comment: "✅ Password reset functionality working perfectly. Successfully tested: 1) Password reset with valid email returns 'Password reset successfully' message, 2) Old password correctly rejected after reset, 3) New password works for login, 4) Invalid email returns 404 error as expected, 5) Favorite locations functionality still works after password reset. All edge cases handled properly."
+ 
+ agent_communication:
+   - agent: "testing"
+     message: "✅ ALL BACKEND TESTS PASSED (7/7) - Complete backend API testing completed successfully. All endpoints working correctly: User Registration, Login, Get Current User, Astronomy Data, Add/Get/Delete Favorites. Fixed missing httpx dependency issue during testing. Backend is fully functional and ready for production use."
+   - agent: "main"
+-    message: "📝 Updates made: 1) Fixed HTML document location - moved to /app/Functioneel_Ontwerp_Lunar_View.html. 2) Added password reset feature - new backend endpoint /api/auth/reset-password and frontend page /reset-password with link from login page. 3) Enhanced favorite location save with better error handling and Dutch messages. Need to test password reset endpoint and investigate user reported issue with save favorite location button not working."
 \ No newline at end of file
-+#====================================================================================================
-+
-+user_problem_statement: "Test the Lunar View backend APIs for user authentication, astronomy data retrieval, and favorite location management"
-+
-+backend:
-+  - task: "User Registration API"
-+    implemented: true
-+    working: true
-+    file: "backend/server.py"
-+    stuck_count: 0
-+    priority: "high"
-+    needs_retesting: false
-+    status_history:
-+      - working: true
-+        agent: "testing"
-+        comment: "✅ User registration endpoint working correctly. Successfully registered test user with email test@lunarview.com and received access token and user object with ID 69265aaa8791e652efc58002"
-+
-+  - task: "User Login API"
-+    implemented: true
-+    working: true
-+    file: "backend/server.py"
-+    stuck_count: 0
-+    priority: "high"
-+    needs_retesting: false
-+    status_history:
-+      - working: true
-+        agent: "testing"
-+        comment: "✅ User login endpoint working correctly. Successfully authenticated with test credentials and received access token and user object"
-+
-+  - task: "Get Current User API"
-+    implemented: true
-+    working: true
-+    file: "backend/server.py"
-+    stuck_count: 0
-+    priority: "high"
-+    needs_retesting: false
-+    status_history:
-+      - working: true
-+        agent: "testing"
-+        comment: "✅ Get current user endpoint working correctly. Successfully retrieved user data using Bearer token authentication"
-+
-+  - task: "Astronomy Data API"
-+    implemented: true
-+    working: true
-+    file: "backend/server.py"
-+    stuck_count: 0
-+    priority: "high"
-+    needs_retesting: false
-+    status_history:
-+      - working: true
-+        agent: "testing"
-+        comment: "✅ Astronomy data endpoint working correctly. Successfully retrieved comprehensive astronomical data for Berlin coordinates (lat: 52.52, long: 13.405) from ipgeolocation.io API including sunrise, sunset, moonrise, moonset, moon phase, and other astronomical calculations"
-+
-+  - task: "Add Favorite Location API"
-+    implemented: true
-+    working: true
-+    file: "backend/server.py"
-+    stuck_count: 0
-+    priority: "high"
-+    needs_retesting: false
-+    status_history:
-+      - working: true
-+        agent: "testing"
-+        comment: "✅ Add favorite location endpoint working correctly. Successfully added Berlin as favorite location with coordinates and received favorite object with ID 69265aac8791e652efc58003"
-+
-+  - task: "Get Favorites API"
-+    implemented: true
-+    working: true
-+    file: "backend/server.py"
-+    stuck_count: 0
-+    priority: "high"
-+    needs_retesting: false
-+    status_history:
-+      - working: true
-+        agent: "testing"
-+        comment: "✅ Get favorites endpoint working correctly. Successfully retrieved list of user's favorite locations (1 location found)"
-+
-+  - task: "Delete Favorite API"
-+    implemented: true
-+    working: true
-+    file: "backend/server.py"
-+    stuck_count: 0
-+    priority: "high"
-+    needs_retesting: false
-+    status_history:
-+      - working: true
-+        agent: "testing"
-+        comment: "✅ Delete favorite endpoint working correctly. Successfully deleted favorite location and received success confirmation message"
-+
-+metadata:
-+  created_by: "testing_agent"
-+  version: "1.0"
-+  test_sequence: 1
-+  run_ui: false
-+
-+test_plan:
-+  current_focus:
-+    - "All backend APIs tested successfully"
-+  stuck_tasks: []
-+  test_all: true
-+  test_priority: "high_first"
-+
-+agent_communication:
++    message: "📝 Updates made: 1) Fixed HTML document location - moved to /app/Functioneel_Ontwerp_Lunar_View.html. 2) Added password reset feature - new backend endpoint /api/auth/reset-password and frontend page /reset-password with link from login page. 3) Enhanced favorite location save with better error handling and Dutch messages. Need to test password reset endpoint and investigate user reported issue with save favorite location button not working."
 +  - agent: "testing"
-+    message: "✅ ALL BACKEND TESTS PASSED (7/7) - Complete backend API testing completed successfully. All endpoints working correctly: User Registration, Login, Get Current User, Astronomy Data, Add/Get/Delete Favorites. Fixed missing httpx dependency issue during testing. Backend is fully functional and ready for production use."
++    message: "🔄 PASSWORD RESET TESTING COMPLETE (10/11 tests passed) - Comprehensive testing of password reset functionality completed successfully. ✅ Password reset endpoint works perfectly: accepts email/new_password, returns correct success message, properly rejects invalid emails with 404. ✅ Password security verified: old password correctly rejected after reset, new password works for login. ✅ Favorite locations functionality confirmed working after password reset. Only 'failure' was expected user registration conflict (user already exists). All requested test scenarios completed successfully."
 \ No newline at end of file
