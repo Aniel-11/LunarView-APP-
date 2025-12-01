@@ -599,33 +599,47 @@ class LunarViewTester:
             return False
     
     def run_all_tests(self):
-        """Run all tests in sequence"""
+        """Run all tests in sequence including password reset functionality"""
         print("🚀 Starting Lunar View Backend API Tests")
         print(f"📍 Base URL: {BASE_URL}")
         print(f"👤 Test User: {TEST_USER['email']}")
+        print(f"🔑 Testing Password Reset Functionality")
         print("=" * 60)
         
-        # Test sequence
-        tests = [
-            ("Registration", self.test_user_registration),
-            ("Login", self.test_user_login),
-            ("Get Current User", self.test_get_current_user),
-            ("Astronomy Data", self.test_astronomy_data),
-            ("Add Favorite", self.test_add_favorite),
-            ("Get Favorites", self.test_get_favorites),
-            ("Delete Favorite", self.test_delete_favorite)
-        ]
-        
-        # If registration fails, try login
+        # Step 1: Ensure user exists (register or login)
         if not self.test_user_registration():
             print("\n⚠️ Registration failed, attempting login...")
             if not self.test_user_login():
                 print("\n❌ Both registration and login failed. Cannot continue tests.")
                 return self.generate_summary()
         
-        # Continue with remaining tests
-        for test_name, test_func in tests[1:]:
-            test_func()
+        # Step 2: Test basic functionality first
+        print("\n📋 Testing Basic API Functionality...")
+        self.test_get_current_user()
+        self.test_astronomy_data()
+        
+        # Step 3: Test password reset functionality
+        print("\n🔄 Testing Password Reset Functionality...")
+        
+        # Test password reset with valid email
+        if not self.test_password_reset_valid_email():
+            print("❌ Password reset failed - cannot continue with password tests")
+        else:
+            # Test login with old password (should fail)
+            self.test_login_with_old_password()
+            
+            # Test login with new password (should succeed)
+            if not self.test_login_with_new_password():
+                print("❌ Cannot login with new password - favorites tests may fail")
+        
+        # Test password reset with invalid email
+        self.test_password_reset_invalid_email()
+        
+        # Step 4: Test favorites functionality with new password
+        print("\n⭐ Testing Favorites Functionality (After Password Reset)...")
+        self.test_add_favorite()
+        self.test_get_favorites()
+        self.test_delete_favorite()
         
         return self.generate_summary()
     
