@@ -416,6 +416,187 @@ class LunarViewTester:
         except Exception as e:
             self.log_test("Delete Favorite", False, f"Exception: {str(e)}", None)
             return False
+
+    def test_password_reset_valid_email(self):
+        """Test password reset with valid email"""
+        print("\n🔄 Testing Password Reset (Valid Email)...")
+        
+        try:
+            reset_data = {
+                "email": TEST_USER["email"],
+                "new_password": NEW_PASSWORD
+            }
+            
+            response = self.session.post(
+                f"{BASE_URL}/auth/reset-password",
+                json=reset_data,
+                headers={"Content-Type": "application/json"}
+            )
+            
+            if response.status_code == 200:
+                data = response.json()
+                expected_message = "Password reset successfully"
+                if data.get("message") == expected_message:
+                    self.log_test(
+                        "Password Reset (Valid)", 
+                        True, 
+                        f"Password reset successful: {data['message']}",
+                        data
+                    )
+                    return True
+                else:
+                    self.log_test(
+                        "Password Reset (Valid)", 
+                        False, 
+                        f"Unexpected response message: {data}",
+                        data
+                    )
+                    return False
+            else:
+                self.log_test(
+                    "Password Reset (Valid)", 
+                    False, 
+                    f"HTTP {response.status_code}: {response.text}",
+                    None
+                )
+                return False
+                
+        except Exception as e:
+            self.log_test("Password Reset (Valid)", False, f"Exception: {str(e)}", None)
+            return False
+
+    def test_password_reset_invalid_email(self):
+        """Test password reset with non-existent email"""
+        print("\n❌ Testing Password Reset (Invalid Email)...")
+        
+        try:
+            reset_data = {
+                "email": "nonexistent@example.com",
+                "new_password": "somepassword123"
+            }
+            
+            response = self.session.post(
+                f"{BASE_URL}/auth/reset-password",
+                json=reset_data,
+                headers={"Content-Type": "application/json"}
+            )
+            
+            if response.status_code == 404:
+                data = response.json()
+                self.log_test(
+                    "Password Reset (Invalid)", 
+                    True, 
+                    f"Correctly rejected non-existent email: {data.get('detail', 'User not found')}",
+                    data
+                )
+                return True
+            else:
+                self.log_test(
+                    "Password Reset (Invalid)", 
+                    False, 
+                    f"Expected 404 but got {response.status_code}: {response.text}",
+                    None
+                )
+                return False
+                
+        except Exception as e:
+            self.log_test("Password Reset (Invalid)", False, f"Exception: {str(e)}", None)
+            return False
+
+    def test_login_with_old_password(self):
+        """Test login with old password (should fail after reset)"""
+        print("\n🚫 Testing Login with Old Password (Should Fail)...")
+        
+        try:
+            login_data = {
+                "email": TEST_USER["email"],
+                "password": TEST_USER["password"]  # Old password
+            }
+            
+            response = self.session.post(
+                f"{BASE_URL}/auth/login",
+                json=login_data,
+                headers={"Content-Type": "application/json"}
+            )
+            
+            if response.status_code == 401:
+                data = response.json()
+                self.log_test(
+                    "Login Old Password", 
+                    True, 
+                    f"Old password correctly rejected: {data.get('detail', 'Authentication failed')}",
+                    data
+                )
+                return True
+            elif response.status_code == 200:
+                self.log_test(
+                    "Login Old Password", 
+                    False, 
+                    "Old password still works - password reset may have failed!",
+                    response.json()
+                )
+                return False
+            else:
+                self.log_test(
+                    "Login Old Password", 
+                    False, 
+                    f"Unexpected status code {response.status_code}: {response.text}",
+                    None
+                )
+                return False
+                
+        except Exception as e:
+            self.log_test("Login Old Password", False, f"Exception: {str(e)}", None)
+            return False
+
+    def test_login_with_new_password(self):
+        """Test login with new password (should succeed after reset)"""
+        print("\n✅ Testing Login with New Password (Should Succeed)...")
+        
+        try:
+            login_data = {
+                "email": TEST_USER["email"],
+                "password": NEW_PASSWORD  # New password
+            }
+            
+            response = self.session.post(
+                f"{BASE_URL}/auth/login",
+                json=login_data,
+                headers={"Content-Type": "application/json"}
+            )
+            
+            if response.status_code == 200:
+                data = response.json()
+                if "access_token" in data and "user" in data:
+                    self.access_token = data["access_token"]
+                    self.user_id = data["user"]["id"]
+                    self.log_test(
+                        "Login New Password", 
+                        True, 
+                        f"New password login successful for: {data['user']['email']}",
+                        data
+                    )
+                    return True
+                else:
+                    self.log_test(
+                        "Login New Password", 
+                        False, 
+                        "Response missing access_token or user data",
+                        data
+                    )
+                    return False
+            else:
+                self.log_test(
+                    "Login New Password", 
+                    False, 
+                    f"HTTP {response.status_code}: {response.text}",
+                    None
+                )
+                return False
+                
+        except Exception as e:
+            self.log_test("Login New Password", False, f"Exception: {str(e)}", None)
+            return False
     
     def run_all_tests(self):
         """Run all tests in sequence"""
