@@ -94,14 +94,21 @@ function Home() {
   };
 
   const handleSaveLocation = async () => {
+    console.log('🔍 Saving location:', { currentLocation, locationName, token });
+    
     if (!currentLocation || !locationName) {
-      alert('No location to save');
+      alert('Geen locatie om op te slaan');
+      return;
+    }
+
+    if (!token) {
+      alert('Je bent niet ingelogd. Log opnieuw in.');
       return;
     }
 
     setSaving(true);
     try {
-      await axios.post(
+      const response = await axios.post(
         `${API_URL}/api/favorites`,
         {
           location_name: locationName,
@@ -114,9 +121,11 @@ function Home() {
           },
         }
       );
-      alert('Location saved to favorites!');
+      console.log('✅ Location saved successfully:', response.data);
+      alert('Locatie opgeslagen in favorieten! 🌟');
     } catch (err) {
-      alert(err.response?.data?.detail || 'Failed to save location');
+      console.error('❌ Error saving location:', err);
+      alert(err.response?.data?.detail || 'Opslaan mislukt. Probeer opnieuw.');
     } finally {
       setSaving(false);
     }
