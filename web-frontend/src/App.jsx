@@ -6,6 +6,7 @@ import { NotificationProvider } from './contexts/NotificationContext';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import ResetPassword from './pages/ResetPassword/ResetPassword';
+import Download from './pages/Download/Download';
 import Home from './pages/Home/Home';
 import Favorites from './pages/Favorites/Favorites';
 import Profile from './pages/Profile/Profile';
