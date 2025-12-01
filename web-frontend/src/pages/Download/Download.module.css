@@ -1,0 +1,154 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 48px;
+  max-width: 700px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.icon {
+  font-size: 80px;
+  margin-bottom: 24px;
+}
+
+.card h1 {
+  color: #fff;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.details {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.detailItem {
+  margin-bottom: 20px;
+}
+
+.detailItem:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  color: #ffd700;
+  font-weight: 600;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.details ul {
+  list-style: none;
+  padding-left: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.details ul li {
+  padding: 6px 0;
+  padding-left: 24px;
+  position: relative;
+}
+
+.details ul li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4ade80;
+  font-weight: bold;
+}
+
+.downloadButton {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #1a1a2e;
+  border: none;
+  border-radius: 16px;
+  padding: 18px 48px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+}
+
+.downloadButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5);
+}
+
+.downloadButton:active {
+  transform: translateY(-1px);
+}
+
+.instructions {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+
+.instructions h3 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.instructions ol {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  padding-left: 24px;
+}
+
+.instructions ol li {
+  margin-bottom: 8px;
+}
+
+.instructions code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  color: #ffd700;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 32px 24px;
+  }
+
+  .card h1 {
+    font-size: 26px;
+  }
+
+  .icon {
+    font-size: 60px;
+  }
+
+  .downloadButton {
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+}
