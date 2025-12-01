@@ -105,6 +105,21 @@
   text-align: center;
 }
 
+.forgotPassword {
+  text-align: center;
+  margin-top: -0.5rem;
+  font-size: 0.85rem;
+}
+
+.forgotPassword a {
+  color: #FFD700;
+  text-decoration: none;
+}
+
+.forgotPassword a:hover {
+  text-decoration: underline;
+}
+
 .registerLink {
   text-align: center;
   color: #A5B4FF;
